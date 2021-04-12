@@ -1,0 +1,24 @@
+<section class="pf-c-page__main-section">
+  <div class="pf-c-page__main-body pf-l-grid">
+    <form class="pf-c-form pf-l-grid__item pf-m-3-col" >
+      <div class="pf-c-form__group">
+        <div class="pf-c-form__group-label">
+          <label class="pf-c-form__label" for="input">
+            <span class="pf-c-form__label-text">Input</span>
+            <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+          </label>
+        </div>
+        <div class="pf-c-form__group-control">
+          <input class="pf-c-form-control" type="text" id="input" name="input" required />
+        </div>
+      </div>
+      <div class="pf-c-form__group pf-m-action">
+        <div class="pf-c-form__actions">
+          <button class="pf-c-button pf-m-primary" type="button" (click)=saveForLater()>Save for later</button>
+        </div>
+      </div>
+    </form>
+
+    <h1>{{user}}</h1>
+  </div>
+</section>
