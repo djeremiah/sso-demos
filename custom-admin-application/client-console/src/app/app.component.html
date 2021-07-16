@@ -1,0 +1,43 @@
+<!-- Main page layout -->
+<div class="pf-c-page">
+    <!-- Header -->
+    <header class="pf-c-page__header" role="banner">
+        <!-- toggle nav -->
+        <div class="pf-c-page__header-brand">
+            <div class="pf-c-page__header-brand-toggle">
+                <button (click)="toggleNav()" class="pf-c-button pf-m-plain" type="button" [attr.aria-expanded]="sidebarOpen" aria-controls="sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="pf-c-page__sidebar pf-m-dark" [class.pf-m-collapsed]="!sidebarOpen" id="sidebar">
+        <div class="pf-c-page__sidebar-body">
+
+            <!-- Navigation -->
+            <nav class="pf-c-nav pf-m-dark" aria-label="Global">
+                <ul class="pf-c-nav__list">
+
+                    <!-- Application Management -->
+                    <li class="pf-c-nav__item">
+                        <a class="pf-c-nav__link" [routerLink]="['application/new']">New Application</a>
+                    </li>
+
+                    <!-- User Management -->
+                    <li class="pf-c-nav__item">
+                        <a class="pf-c-nav__link" [routerLink]="['users']">User upload</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="pf-c-page__main" id="main" role="main">
+        <section class="pf-c-page__main-section pf-m-no-padding">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>

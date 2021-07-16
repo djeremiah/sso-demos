@@ -1,0 +1,40 @@
+<ng-container *ngIf="{
+    activeStep: activeStep$ | async,
+    steps: steps | keyvalue : byIndex
+} as data">
+<!-- New Client Wizard -->
+<div class="pf-c-wizard pf-m-in-page">
+
+    <!-- Navigation Controls for Small Screens-->
+    <button (click)="toggleNav()" class="pf-c-wizard__toggle" [class.pf-m-expanded]="navOpen" aria-label="Wizard Nav Toggle" [attr.aria-expanded]="navOpen">
+        <ol class="pf-c-wizard__toggle-list">
+            <li class="pf-c-wizard__toggle-list-item">
+                <span class="pf-c-wizard__toggle-num">{{data.activeStep.index}}</span>{{data.activeStep.name}}
+            </li>
+        </ol>
+        <i class="fas fa-caret-down pf-c-wizard__toggle-icon" aria-hidden="true"></i>
+    </button>
+
+    <!-- Wizard Content -->
+    <div class="pf-c-wizard__outer-wrap">
+        <div class="pf-c-wizard__inner-wrap">
+
+            <!-- Wizard Steps-->
+            <nav class="pf-c-wizard__nav" [class.pf-m-expanded]="navOpen" aria-label="Steps">
+                <ol class="pf-c-wizard__nav-list">
+                    <li *ngFor="let step of data.steps" class="pf-c-wizard__nav-item">
+                        <a class="pf-c-wizard__nav-link" routerLinkActive="pf-m-current"
+                            [routerLink]="[step.value.path]">{{step.value.name}}</a>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Step Detail -->
+            <div class="pf-c-wizard__main">
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+    </div>
+</div>
+</ng-container>

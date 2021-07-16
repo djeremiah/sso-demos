@@ -44,7 +44,7 @@ public class ClientApplication implements CommandLineRunner {
 		RestTemplate restTemplate = new RestTemplate();
 
 		ResponseEntity<String> response = restTemplate.exchange(
-			"http://localhost:8080/api",
+			"http://localhost:9080/api",
 				HttpMethod.GET,
 				request,
 				String.class

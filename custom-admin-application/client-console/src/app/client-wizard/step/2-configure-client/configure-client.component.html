@@ -1,0 +1,46 @@
+<div class="pf-l-stack">
+    <!-- Header -->
+    <div class="pf-l-stack__item pf-l-bullseye pf-u-h-25vh">
+        <h2 class="pf-c-title pf-m-2xl">Great, we'll provision a {{clientType}} Client. What should we call it?</h2>
+    </div>
+
+    <div class="pf-c-wizard__main-body pf-l-stack__item pf-m-dark pf-m-fill">
+        
+        <!-- Client form -->
+        <div class="pf-c-card">
+            <div class="pf-c-card__body">
+                <form class="pf-c-form pf-l-grid" id="client-form" [formGroup]="clientForm"
+                    (ngSubmit)="onSubmit(clientForm.value)">
+
+                    <!-- Realm -->
+                    <div class="pf-c-form__group pf-l-grid__item pf-m-6-col">
+                        <label class="pf-c-form__label" for="client-form-realm">
+                            <span class="pf-c-form__label-text">Client Realm</span>
+                            <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                        </label>
+                        <input class="pf-c-form-control" required id="client-form-realm" name="client-form-realm"
+                            type="text" formControlName="realm" />
+                    </div>
+
+                    <div class="pf-l-grid__item pf-m-6-col"></div>
+
+                    <!-- Name -->
+                    <div class="pf-c-form__group pf-l-grid__item pf-m-6-col">
+                        <label class="pf-c-form__label" for="client-form-name">
+                            <span class="pf-c-form__label-text">Client Name</span>
+                            <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                        </label>
+                        <input class="pf-c-form-control" required id="client-form-name" name="client-form-name"
+                            type="text" formControlName="name" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <footer class="pf-c-wizard__footer">
+        <button class="pf-c-button pf-m-primary" type="submit" form="client-form">Next</button>
+        <button [routerLink]="['../get-started']" class="pf-c-button pf-m-secondary" type="button">Back</button>
+    </footer> 
+</div>

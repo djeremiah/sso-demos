@@ -14,7 +14,7 @@ public class ApiService {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String call(){
-        return "backend response";
+        return "new backend response";
     }
 
 }

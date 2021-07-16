@@ -1,0 +1,54 @@
+<!-- Discard Role -->
+<div class="pf-c-card__head">
+    <div class="pf-c-card__actions">
+        <button (click)="discard()" class="pf-c-button pf-m-plain" type="button" aria-label="Remove Role">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+    </div>
+</div>
+
+<!-- User Icon -->
+<div class="pf-c-card__body pf-l-bullseye">
+    <i class="fa-7x pf-icon pf-icon-user" aria-hidden="true"></i>
+</div>
+
+<!-- Inline form for Role name -->
+<div class="pf-c-card__footer">
+    <form class="pf-c-inline-edit" [class.pf-m-inline-editable]="edit" (ngSubmit)="save()">
+        <!-- Display Value -->
+        <div class="pf-c-inline-edit__group pf-u-display-flex pf-u-justify-content-center box">
+            <div class="pf-c-inline-edit__value">{{value}}</div>
+            <div class="pf-c-inline-edit__action pf-m-enable-editable right">
+                <button class="pf-c-button pf-m-inline" type="button" (click)="toggleEdit()">
+                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="pf-c-inline-edit__group">
+            
+        </div>
+
+        <!-- Input Value -->
+        <div class="pf-c-inline-edit__group">
+            <div class="pf-c-inline-edit__input">
+                <input #roleInput class="pf-c-form-control" type="text" [formControl]="control" />
+            </div>
+            <div class="pf-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+
+                <!-- Save Button -->
+                <div class="pf-c-inline-edit__action pf-m-valid">
+                    <button (click)="save()" class="pf-c-button pf-m-inline" type="button" aria-label="Save edits">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Cancel Button -->
+                <div class="pf-c-inline-edit__action">
+                    <button (click)="cancel()" class="pf-c-button pf-m-inline" type="button" aria-label="Cancel edits">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

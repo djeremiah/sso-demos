@@ -1,0 +1,26 @@
+<div class="pf-l-stack">
+    <!-- Header -->
+    <div class="pf-l-stack__item pf-l-bullseye pf-u-h-25vh">
+        <h2 class="pf-c-title pf-m-2xl">Let's get started: What kind of application are you creating?</h2>
+    </div>
+
+    <!-- Gallery of Client Types -->
+    <div class="pf-c-wizard__main-body pf-l-stack__item pf-m-dark pf-m-fill">
+        <div class="pf-l-gallery pf-m-gutter ">
+            <div *ngFor="let type of types" (click)="startClientConfiguration(type.key)"
+                class="pf-c-card pf-l-gallery__item pf-m-selectable">
+                <div class="pf-c-card__body pf-m-no-fill pf-u-h-25vh">
+                    <div class="pf-l-bullseye">
+                        <i class="fa-5x pf-icon {{type.icon}}" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="pf-c-card__body pf-m-no-fill">
+                    <h3 class="pf-c-title pf-m-md">{{type.name}}</h3>
+                </div>
+                <div class="pf-c-card__body">
+                    <p>{{type.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

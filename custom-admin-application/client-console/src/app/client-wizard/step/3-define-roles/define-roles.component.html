@@ -1,0 +1,31 @@
+<div class="pf-l-stack">
+    <!-- Header -->
+    <div class="pf-l-stack__item pf-l-bullseye pf-u-h-25vh">
+        <h2 class="pf-c-title pf-m-2xl">Create Roles that represent the broad, application-oriented category of a User
+        </h2>
+    </div>
+
+    <div class="pf-c-wizard__main-body pf-l-stack__item pf-m-dark pf-m-fill">
+        <!-- Gallery of Roles -->
+        <div class="pf-l-gallery pf-m-gutter">
+
+            <!-- Role Cards -->
+            <div client-role-badge *ngFor="let role of roles.controls; let i=index" class="pf-c-card pf-l-gallery__item" [control]="role" (deleted)="removeRole(i)"></div>
+
+            <!-- Add Role Card -->
+            <div class="pf-c-card pf-l-gallery__item pf-m-selectable" (click)="addRole()">
+                <div class="pf-c-card__head">
+                </div>
+                <div class="pf-c-card__body pf-l-bullseye">
+                    <i class="fa-7x pf-icon pf-icon-add-circle-o" aria-hidden="true"></i>
+                </div>
+                <div class="pf-c-card__body pf-u-text-align-center">Add Role</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pf-c-wizard__footer">
+        <button (click)="saveRoles()" class="pf-c-button pf-m-primary" type="submit">Next</button>
+        <button [routerLink]="['../configure-client']" class="pf-c-button pf-m-secondary" type="button">Back</button>
+    </footer> 
+</div>
